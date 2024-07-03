@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 8px;
+            /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 98vh;
+        }
+        .chat-header {
+            background-color: rgba(181, 145, 2, 0.738);;
+            color: white;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-header h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: scroll;
+            scroll-behavior: smooth; 
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            background-color: #f1f0f0;
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+        }
+        .message.from-me {
+            background-color: #fbf2b3;
+            align-self: flex-end;
+        }
+        .message-content {
+            font-size: 14px;
+        }
+        .chat-input {
+            display: flex;
+            padding: 10px;
+        }
+        .chat-input input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .chat-input button {
+            padding: 8px 15px;
+            font-size: 14px;
+            background-color: #534caf;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        <h2>Chat</h2>
+        <button onclick="clearChat()">Effacer</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+        <!-- Message ajouté dynamiquement -->
+    </div>
+    <div class="chat-input">
+        <input type="text" id="message-input" placeholder="Entrez votre message...">
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+</div>
+
+<script>
+    // Function to send a message
+    function sendMessage() {
+        var messageInput = document.getElementById('message-input');
+        var messageText = messageInput.value.trim();     
+        if (messageText !== '') {
+            addMessage(messageText, 'from-me');
+            messageInput.value = '';
+            messageInput.focus();
+        }
+    }
+
+    // Function to add a message to the chat
+    function addMessage(message, senderClass) {
+        var chatMessages = document.getElementById('chat-messages');
+        var messageElement = document.createElement('div');
+        messageElement.classList.add('message', senderClass);
+        messageElement.innerHTML = '<p class="message-content">' + message + '</p>';
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    function clearChat() {
+        var chatMessages = document.getElementById('chat-messages');
+        chatMessages.innerHTML = '';
+    }
+</script>
+
+</body>
+</html>
