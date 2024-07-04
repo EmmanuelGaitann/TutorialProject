@@ -5,92 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Interface</title>
+    <link rel="stylesheet" href="_style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
 
-        .chat-container {
-            max-width: 600px;
-            margin: 20px auto;
-            border-radius: 8px;
-            /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 98vh;
-        }
-
-        .chat-header {
-            background-color: rgba(181, 145, 2, 0.738);
-            ;
-            color: white;
-            padding: 10px 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-header h2 {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .chat-messages {
-            flex: 1;
-            padding: 10px;
-            overflow-y: scroll;
-            scroll-behavior: smooth;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .message {
-            background-color: #f1f0f0;
-            padding: 8px 12px;
-            margin-bottom: 8px;
-            border-radius: 5px;
-        }
-
-        .message.from-me {
-            background-color: #fbf2b3;
-            align-self: flex-end;
-        }
-
-        .message-content {
-            font-size: 14px;
-        }
-
-        .chat-input {
-            display: flex;
-            padding: 10px;
-        }
-
-        .chat-input input[type="text"] {
-            flex: 1;
-            padding: 8px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-
-        .chat-input button {
-            padding: 8px 15px;
-            font-size: 14px;
-            background-color: #534caf;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
     </style>
 </head>
 
 <body>
+
+    <div class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="title">KoTch</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="dashboard.html">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="chat.html">
+              <span class="icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </span>
+              <span class="title">Chat</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+              </span>
+              <span class="title">Forum</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="faq.html">
+              <span class="icon">
+                <ion-icon name="help-outline"></ion-icon>
+              </span>
+              <span class="title">FAQ</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="log-out-outline"></ion-icon>
+              </span>
+              <span class="title">Deconnexion</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+
+          <div class="search">
+            <label>
+              <input type="text" placeholder="Recherche Ici" />
+              <ion-icon name="search-outline"></ion-icon>
+            </label>
+          </div>
+        </div>
+
+
 
     <div class="chat-container">
         <div class="chat-header">
@@ -132,7 +123,16 @@
             chatMessages.innerHTML = '';
         }
     </script>
+    <script src="main.js"></script>
 
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
 </body>
 
 </html>
