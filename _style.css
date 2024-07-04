@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     font-family: "Poppins", sans-serif;
@@ -207,14 +208,14 @@
     object-fit: cover;
   }
   
-  /* ======================= Cards ====================== */
+
+
   .cardBox {
     position: relative;
     width: 100%;
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
+    display: flex;
+    flex-direction: column;
   }
   
   .cardBox .card {
@@ -325,15 +326,15 @@
   .details .recentOrders table tr td:nth-child(3) {
     text-align: center;
   }
-  .status.delivered {
+  .status.regle {
     padding: 2px 4px;
-    background: #8de02c;
+    background: #6eb320;
     color: var(--white);
     border-radius: 4px;
     font-size: 14px;
     font-weight: 500;
   }
-  .status.pending {
+  .status.attente {
     padding: 2px 4px;
     background: #e9b10a;
     color: var(--white);
@@ -341,7 +342,7 @@
     font-size: 14px;
     font-weight: 500;
   }
-  .status.return {
+  .status.urgent {
     padding: 2px 4px;
     background: #f00;
     color: var(--white);
@@ -349,59 +350,30 @@
     font-size: 14px;
     font-weight: 500;
   }
-  .status.inProgress {
-    padding: 2px 4px;
-    background: #1795ce;
-    color: var(--white);
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  
-  .recentCustomers {
+
+
+  .Recentsmessages{
     position: relative;
     display: grid;
     min-height: 500px;
-    padding: 20px;
     background: var(--white);
+    padding: 20px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 100;
+
   }
-  .recentCustomers .imgBx {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    overflow: hidden;
-  }
-  .recentCustomers .imgBx img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .recentCustomers table tr td {
-    padding: 12px 10px;
-  }
-  .recentCustomers table tr td h4 {
-    font-size: 16px;
+  .Recentsmessages table h4{
     font-weight: 500;
-    line-height: 1.2rem;
   }
-  .recentCustomers table tr td h4 span {
-    font-size: 14px;
-    color: var(--black2);
+  .Recentsmessages table h4 span{
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
   }
-  .recentCustomers table tr:hover {
-    background: var(--blue);
-    color: var(--white);
-  }
-  .recentCustomers table tr:hover td h4 span {
-    color: var(--white);
-  }
-  
+
   /* ====================== Responsive========================== */
   @media (max-width: 991px) {
     .navigation {
